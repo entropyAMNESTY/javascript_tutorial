@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Document</title>
+    <!-- script loads -- non-blocking -->
+    <!-- script runs -- blocking -->
+    <!-- scripts also blocking each other -->
+</head>
+<body>
+    <p id="order-matters">We want this text to display</p>
+    <script src="/main.js" async>
+
+    </script>
+    <!-- <script>
+    document.write('I expect this to be executed first');
+    alert('I expect this to be executed second'); 
+    </script> -->
+    <!-- document has to read the paragraph text before we can manipulate it. Order of the script tag matters -->
+    <!-- <script>
+        let para = document.getElementsByTagName('p')[0];
+        para.innerHTML = 'This is new text replaced by Javascript'
+    </script> -->
+</body>
+</html>

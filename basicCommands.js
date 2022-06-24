@@ -63,3 +63,7 @@ console.log(`You have ${number} ${color} apples`)
 
 // CodePen as IDE
 
+//use external js files
+
+
+
