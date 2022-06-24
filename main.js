@@ -14,3 +14,15 @@ while((new Date) < t1 + 5000) {
     //do nothing
 }
 console.log('script has finished running at', +new Date)
+
+// JS ignores WHITE SPACE
+
+/* Data Types
+    -Simple | Primitive || Strings, Numbers, Boolean, Null, Undefined, Symbols
+    -Complex | Objects || Objects-literals, Arrays
+        Method: typeof() --> determine that data you working with
+
+        Those have properties: length, indexOf() etc
+            -except null and undefined
+*/ 
+
