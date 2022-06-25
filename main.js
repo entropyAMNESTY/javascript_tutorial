@@ -24,5 +24,8 @@ console.log('script has finished running at', +new Date)
 
         Those have properties: length, indexOf() etc
             -except null and undefined
+        Access: 
+            1. Dot-Notation .   --> value.x
+            2. square-bracket-Notation []   --> value[x]
 */ 
 
