@@ -55,5 +55,75 @@ try {
 
 // SCOPE
 // Where you can use a variable
+// Local vs Global --> Any variable that can only be used in specific parts has LOCAL scope
+// Local Scope 2 types --> function scope vs block scope
+
+// defined variables within a function --> LET is limited to that specific function
+function test() {
+    let car = 'BMW'
+    console.log(car)
+}
+
+test();
+
+
+// Block is a subset of functions
+// Block scoped - variables are limited to the surrounding block when you use LET
+
+{
+    let animal = 'warthog';
+    console.log(animal);
+}
+
+animal
+
+// when you use var instead of let/const the variable is available outside the block
+// a variable declared outside a function or block has global scope
+
+// Globally scoped variables
+
+let favoriteFood = 'Pizza';
+
+function showFood() {
+    console.log(favoriteFood);
+}
+
+showFood()
+
+let a = {};
+a.favoriteFoodType = 'pizza';
+console.log(a.favoriteFoodType);
+
+// Javascript with ES 6 is a block-scoped programming language
+
+// VAR vs LET
+var age = 2; // global scope
+if(age > 1) {
+    var humanAge = age * (100/18)
+    console.log(`A ${age} year warthog is ${humanAge} years old in human terms`)
+}
+
+humanAge; // --> it's not contained in a function so its available
+
+
+// Example how scoping actually works:
+
+let age = 3; // number -- global variable
+debugger
+function scope() {
+    let age = 'young'; // local variable -- type string
+    debugger
+    if (true) {
+        let age = 'old'; // local block scope
+        debugger
+        console.log(age);
+    }
+}
+console.log(age);
+scope();
+
+
+
+
 
 
