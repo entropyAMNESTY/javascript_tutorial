@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            http-equiv="X-UA-Compatible"
+            content="IE=edge"
+        />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+        <title>Dates</title>
+    </head>
+    <body>
+        <!-- Dates represent a moment in time, and therefore to handle time -->
+        <script>
+            // Create a DATE-OBJECT that points to the current moment of time
+            // The beginning of time for computers: 1Jan 1970
+            // Dates are expressed in milliseconds since this time
+            // new Date()
+            // 32bit-system: Numbers can be stored from 1901 '-2.147.483.648' -->
+            // up to 2038 '2.147.483.647'
+
+            // create variable with the current time
+            // new keyword ==> creating a new object
+            let now = new Date();
+            now;
+
+            //get the current timestamp
+            console.log(now.getTime());
+            // --> outputs the time in milliseconds from 1970 til now
+
+            //Object vs String example
+            let date1 = Date();
+            let date2 = new Date();
+
+            // they look the same
+            date1;
+            date2;
+
+            // but they are not the same
+            console.log(typeof date1);
+            console.log(typeof date2);
+
+            //it's just a string
+            // console.log(date1.getTime()) --> will not work, because its a string and not an object
+
+            // 4 Ways to create a Date
+            // I | new Date() --> current Date and Time
+            // II | new Date(timestamp) --> milliseconds since 1970
+            // III | new Date(date string) --> Creates a Date you specify
+            // IV | new Date(year, month, day, hour, minutes, seconds, milliseconds)
+
+            // Examples
+            let date4 = new Date();
+            let date5 = new Date(0);
+            let date6 = new Date('1 January 1970 01:00');
+            let date7 = new Date(1970, 0, 1, 01, 00, 0);
+
+            // Log them out
+            date4;
+            date5;
+            date6;
+            date7;
+
+            // get methods
+
+            //create user birthday 12 Jan 1987 --> Monday
+            let birthday = new Date(1987, 0, 12);
+
+            // get functions | build in
+            console.log(birthday.getDate());
+            console.log(birthday.getFullYear());
+            console.log(birthday.getMonth());
+
+            // set
+
+            let birthday1 = new Date(1987, 0, 12);
+            // user updates birthday
+            birthday.setFullYear(1990);
+            console.log(birthday1);
+        </script>
+    </body>
+</html>

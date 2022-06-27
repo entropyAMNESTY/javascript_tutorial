@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            http-equiv="X-UA-Compatible"
+            content="IE=edge"
+        />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+        <title>Three Example for the Date Object</title>
+    </head>
+    <body>
+        <script>
+            // Users Birthday - Response
+            // create user Birthday
+
+            let birthday = new Date(1987, 5, 27);
+            birthday;
+
+            // extract birthday month and day
+            let userBirthdayMonth = birthday.getMonth();
+            console.log(userBirthdayMonth);
+
+            let userBirthdayDay = birthday.getDate();
+            console.log(userBirthdayDay);
+
+            // current date
+            let now = new Date();
+            let currentMonth = now.getMonth();
+            console.log(currentMonth);
+
+            let currentDay = now.getDate();
+            console.log(currentDay);
+
+            //display our message if the current month & day === users birthday
+
+            if (
+                currentMonth === userBirthdayMonth &&
+                currentDay === userBirthdayDay
+            ) {
+                console.log('Happy Happy B-Day friendo!');
+            } else {
+                console.log("It's not the users birthday");
+            }
+
+            // EXAMPLE II | TIMEZONE
+            // get methods are based on users local machine's time
+            // to be more accurate, you may want to use UTC time
+
+            // get the current hour of local machines time
+            let doom = new Date();
+            console.log(doom.getHours());
+
+            // use UTC time
+            console.log(doom.getUTCHours());
+
+            // Expample III | Conversion of Time Format
+            let bloom = new Date('1 January 2020');
+            bloom;
+
+            // Converting the string to the intl. standard
+            let newDate =
+                Intl.DateTimeFormat().format(bloom);
+            console.log(newDate);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" onclick="getConfirmation()" value="Confirm">
+    <script>
+        // if-else statement to interact with the user
+        function getConfirmation() {
+            let decision = confirm('Do you want to continue')
+            // User clicks OK
+            if(decision == true) {
+                document.write('the user wants to contiunue')
+            } 
+            // User clicks Cancel
+            else {
+                document.write('The user doesn\'t want to continue');
+            }
+        }
+    </script>
+</body>
+</html>
