@@ -12,5 +12,79 @@
         />
         <title>Objects</title>
     </head>
-    <body></body>
+    <body>
+        <script>
+            // Object is a way to store your data, and to easily access it
+
+            // Variables Example
+            let bikeMake = 'Yamaha';
+            let bikeColor = 'Blue';
+            let bikeWheels = 2;
+
+            // --> You create data for 1 bike
+
+            // Using Objects
+
+            let bike = {
+                make: 'Yamaha',
+                color: 'blue',
+                wheels: 2,
+            };
+
+            // Objects can contain only 2 things
+            // Properties (width, height) and Methods (onClick, onEnter, onHover)
+
+            let car = {
+                make: 'Yamaha',
+                color: 'blue',
+                wheels: 2,
+                sound: function () {
+                    console.log('vroooooom');
+                },
+            };
+
+            // Access Properties and Methods on Objects
+            // 2 Options DOT-NOTATION .propertyName ||| SQUARE-BRACKETS ['propertyName']
+
+            console.log(bike.make);
+            console.log(bike['color']);
+
+            bike.sound();
+
+            // set new properties on the object
+
+            bike.type = 'Petrol';
+            bike['year'] = 2019;
+
+            // set new properties on the object
+
+            bike.type = 'Petrol';
+            bike['year'] = 2019;
+
+            bike.model; // empty property as undefined
+            console.log(bike.model);
+
+            // Adding Properties to anything
+            // Example I - Empty Object
+
+            let empty = {};
+
+            empty.a = 'hi';
+            empty;
+
+            // Example II - Empty Array
+
+            let ampty = [];
+            ampty.a = 'hi';
+            ampty;
+
+            // Example III - Empty Array
+
+            let ompty = function () {};
+
+            ompty.a = 'a';
+
+            ompty;
+        </script>
+    </body>
 </html>
