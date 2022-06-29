@@ -210,9 +210,6 @@
 
             console.log(original);
 
-            // Example III || Object-Literal
-            // Example IV || Object-Literal
-
             let camel = {}; // empty object
             empty;
 
@@ -240,6 +237,198 @@
             human2;
 
             console.log(dog);
+
+            // RECAP I vs II
+
+            // with a constructor function we can construct our object with parameters we pass into it
+
+            function WebsiteUrl(url) {
+                this.url = url;
+                this.showUrl = function () {
+                    console.log(this.url);
+                };
+            }
+
+            let myWebsite = new WebsiteUrl('google.com');
+            myWebsite.showUrl();
+
+            // with an object-literal we don't have this amount of flexibility
+
+            // same setup, with an object literal syntax way
+            // with an object literal, you are unable to have a constructor, which mean you are unable
+            // to initialize your object unless you add your own init function
+
+            let website = {
+                init: function (url) {
+                    this.url = url;
+                },
+                showUrl: function () {
+                    console.log(this.url);
+                },
+            };
+
+            website.init('amazon.com');
+            website.showUrl();
+
+            // Example III || Object-Literal
+            // Object.create() --> Prototype: skeleton object with some inherited properties
+
+            function Kangaroo() {
+                this.name = 'Jack';
+            }
+
+            let user = new Kangaroo();
+            user.name;
+
+            // Syntax: Object.create(prototype, properties) --> 1st paramater mandatory; 2nd para optional
+            // Examples
+            // Prototype has to be either an object or null
+            let hound = Object.create(null);
+            console.log(hound);
+
+            hound.name = 'Fluffy';
+            console.log(hound);
+
+            // object
+            elkProto = {
+                woof: function () {
+                    console.log(this.sound);
+                },
+            };
+
+            let elk = Object.create(elkProto);
+            elk.sound = 'Bruuuh';
+            elk.woof();
+
+            // passing values via parameter
+
+            let cat = Object.create(elkProto, {
+                sound: {
+                    value: 'meow! MeoW!',
+                },
+            });
+
+            cat.woof();
+
+            // Recap - you have to pass an object or null as the prototype
+            // Example 2: Employee
+
+            let dogProto = {
+                company: 'The Dog Factory',
+            };
+
+            let catProto = {
+                company: 'The Cat Factory',
+            };
+
+            // create Employee
+            let employee1 = Object.create(dogProto);
+            employee1.name = 'Frank';
+
+            let employee2 = Object.create(catProto);
+            employee2.name = 'Julie';
+
+            console.log(
+                `${employee1.name} works for ${employee1.company}`
+            );
+            console.log(
+                `${employee2.name} works for ${employee2.company}`
+            );
+
+            // Example IV || Object-Literal
+
+            // Using Classes --> very common among other programming languages to create objects
+            // --> Python, Java
+            // Classes in JS are syntactic sugar --> no true classes, instead still prototypes
+
+            function Elephant(fname, lname) {
+                this.fname = fname;
+                this.lname = lname;
+                this.getName = function () {
+                    console.log(
+                        `${this.fname} ${this.lname}`
+                    );
+                };
+            }
+
+            let oliphant1 = new Elephant('Jack', 'Sparrow');
+            console.log(oliphant1);
+            oliphant1.getName();
+
+            // --> Waste of memory space
+            // --> Everytime a function is created, the engine automatically places a prototype
+            Elephant.prototype.age = 35;
+
+            console.log(oliphant1.age);
+
+            // CLASSES
+
+            // 1. constructor function - Define the object // explicitly use the prototype
+
+            function Weed(name) {
+                this.name = name;
+            }
+
+            Weed.prototype.greeting = function () {
+                console.log(this.name);
+            };
+
+            // 2. instantiate -- call the object
+            let weed1 = new Weed('Sour Diesel');
+            weed1.greeting();
+
+            // class syntax -- same object -- any method you declare, will be automatically attach to the prototype
+
+            class Weedo {
+                constructor(name) {
+                    // Using the constructor method
+                    this.name = name;
+                }
+                greeting() {
+                    console.log(this.name);
+                }
+            }
+
+            let strain = new Weedo('Alabama Kush');
+            strain.greeting();
+
+            // JS a class is a kind of a function, and it puts the methods we create
+            // into the prototype property
+
+            console.log(typeof Weedo);
+
+            console.log(
+                Weedo === Weedo.prototype.constructor
+            ); // --> returns true
+
+            console.log(
+                Object.getOwnPropertyNames(Weedo.prototype)
+            ); // 2 Methods with the proto
+
+            // An object can be passed by reference from one function to another
+
+            function changeName(user) {
+                user.fname = 'John Doe';
+            }
+
+            // create a person
+
+            let man = {
+                fname: 'Serge',
+            };
+
+            changeName(man);
+
+            // ECMA defines all objects as dictionaries
+            // Writable(can be reassigned), Enumerable(can be seen in a for-in loop), Configurable (can be deleted)
+            // [[]] --> double square brackets --> properties that aren't directly exposed
+            // accessible via Object.getOwnPropertyDescriptor
+
+            let obj = {
+                x: 10,
+            };
+
+            Object.getOwnPropertyDescriptor(obj, 'x');
         </script>
     </body>
 </html>
