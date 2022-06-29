@@ -85,6 +85,161 @@
             ompty.a = 'a';
 
             ompty;
+
+            // Creating Object - other programming languages need a class to create an object
+            // In JS, an object is a stand alone entity
+            // 4 Ways to create an object
+
+            // Example I || Object-Literal --> object initializer
+            let fish = {
+                name: 'Woofy',
+                legs: 4,
+            };
+
+            console.log(fish);
+
+            //you have to assign a key and a value, otherwise its an error
+            let animal = {
+                type: 'animal',
+            };
+
+            // An Object with 1 Method
+            let welcomeMessage = {
+                sayHi: function (text) {
+                    console.log(text);
+                },
+            };
+
+            welcomeMessage['sayHi']('Hello');
+            welcomeMessage.sayHi('Hello');
+
+            // A FUNCTION is outside of an OBJECT
+            // A METHOD is inside of an OBJECT
+            // --> but the same thing
+
+            // Objects with properties and Methods
+
+            let alien = {
+                firstname: 'Yark',
+                lastname: 'Smarg',
+                age: 35,
+                message: function () {
+                    console.log(
+                        `${this.firstname} is ${this.age} years old`
+                    );
+                },
+            };
+
+            alien.message();
+
+            // Example II || Object-Constructor --> function that creates an Object
+            // I || Define the Object
+            // II || Call it with the NEW keyword
+            // CONSTRUCTOR FUNCTIONS
+            // Capital Letter --> Object cobnstructed via the constructor function
+            function Motorbike(name, color) {
+                this.name = name;
+                this.color = color;
+            }
+
+            let myBike = new Motorbike('Yamaha', 'black');
+            console.log(myBike);
+
+            console.log(typeof myBike);
+
+            // Difference between an Object-Constructor vs Object-Literal
+
+            function Person() {}
+
+            // vs literal
+
+            let person = {};
+
+            // With the Constructor function you can create mutliple instances
+            // --> new keyword
+            // literal Notation --> single object --> SINGLETON
+
+            // Examples
+            // constructor vs literal
+
+            // I || Define Object via function keyword
+            function Horse() {
+                this.membershipStatus = false;
+                this.name = 'Secretariat';
+                this.talk = function () {
+                    console.log(
+                        `The membership status of ${this.name} is ${this.membershipStatus}`
+                    );
+                };
+            }
+
+            // Call, by instantiation
+
+            let horse1 = new Horse();
+            horse1.talk();
+
+            let horse2 = new Horse();
+            horse2.name = 'John';
+            horse2.membershipStatus = true;
+
+            // each horse will be UNIQUE
+
+            horse2.talk();
+
+            // ****** literal syntax approach
+
+            let raven = {
+                membershipStatus: false,
+                name: 'Huginn',
+                talk: function () {
+                    console.log(
+                        `The membership status of ${this.name} is ${this.membershipStatus}`
+                    );
+                },
+            };
+
+            raven.talk();
+
+            // with the literal notation yyou are always dealing with the same object (singleton)
+            let original = {
+                name: 'original',
+            };
+
+            let clone = original;
+            clone.name = 'clone';
+
+            console.log(original);
+
+            // Example III || Object-Literal
+            // Example IV || Object-Literal
+
+            let camel = {}; // empty object
+            empty;
+
+            let dog = {
+                name: 'Woofy',
+                legs: 4,
+            };
+
+            // Second Option: JS inbuilt Object constructor
+
+            let human = new Object(); // That object is a method built into JS itself --> Object-constructor
+            console.log(typeof human);
+
+            human.name = 'Jerry';
+            human.age = 42;
+
+            console.log(human);
+
+            function Human(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+
+            let human2 = new Human('Smithereens', 33);
+            human2;
+
+            console.log(dog);
         </script>
     </body>
 </html>
