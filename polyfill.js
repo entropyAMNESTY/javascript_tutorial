@@ -27,3 +27,22 @@ arr1.forEach((item, index) => {
 });
 
 arr2;
+
+// Custom forEach-Polyfill
+
+Array.prototype.foarEach = function (callback, argThis) {
+    // check wether the callback is a function
+    if (typeof callback !== 'function') {
+        throw new TypeError(
+            callback + ' is not a function'
+        );
+    }
+    //we can continue our code here
+    console.log('yay, we can continue');
+};
+
+let arr = ['milk', 'honey', 'sugar'];
+arr.foarEach(function () {});
+
+// Array.prototype.forEach = function(callback, thisArg) {...}
+// callback: I  --> item    II  --> index   III --> array
