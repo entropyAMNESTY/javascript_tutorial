@@ -18,3 +18,12 @@ Array.prototype.forEach != undefined; // --> true
 // II    -- Index of that item
 
 //forEach
+
+let arr1 = ['milk', 'honey', 'sugar'];
+let arr2 = [];
+
+arr1.forEach((item, index) => {
+    arr2.push(`${item} has been added as number ${index}`);
+});
+
+arr2;
