@@ -64,4 +64,12 @@ test(user1);
 test(user2); // Inline-Cache recognizes it has the same shape
 // doesn't need to view the Shape-Table
 
-// Shape-Table and Inline Caches heklp to optimize the retrieving speed for the JS-Runtime
+// Shape-Table and Inline Caches help to optimize the retrieving speed for the JS-Runtime
+// So consistency is very important when you have similar Objects, to have faster/ optimized code in the end
+
+//BE CONSISTENT NAMING YOUR OBJECTS
+// Example: Don't do this:
+user1 = { name: 'Katja' };
+user2 = { fname: 'Johanna' };
+user3 = { firstname: 'Smeraldá' };
+user4 = { firstName: 'Fiona' };
