@@ -83,6 +83,7 @@ fruitEntries;
 
 // if you use Object.entries, you most likely want to extract the key value pairs
 
+// Destructuring fruitKey, fruitValue
 for (const [fruitKey, fruitValue] of fruitEntries) {
     console.log(
         `You need to buy ${fruitValue} ${fruitKey}`
