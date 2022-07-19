@@ -29,3 +29,5 @@ orange.recipe();
 food.type = 'Blah blah blah';
 console.log(food.isPrototypeOf(donut));
 // --> true
+
+// [[Prototype]] --> double square brackets --> hidden property
